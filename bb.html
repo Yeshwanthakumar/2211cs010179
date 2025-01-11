@@ -7,24 +7,27 @@
 </head>
 <body>
     <script>
-        let day =prompt("enter a the day?")
-        let day = prompt("Enter a day");
+        let a = parseInt(prompt("Enter the number of units: "), 10);
 
-        switch (day) {
-            case 'Monday':
-            case 'Tuesday':
-            case 'Wednesday':
-            case 'Thursday':
-                console.log("Its is a Week Day");
-                break;
-            case 'Friday':
-            case 'Saturday':
-            case 'Sunday':
-                console.log("its a Weekend");
-                break;
-            default:
-                console.log("Invalid")
+        if (a > 0) {
+            let totalBill = 0;
+
+            if (a <= 50) {
+                totalBill = a * 2;
+            } else if (a <= 150) {
+                totalBill = (50 * 2) + ((a - 50) * 3);
+            } else if (a <= 250) {
+                totalBill = (50 * 2) + (100 * 3) + ((a - 150) * 5);
+            } else {
+                totalBill = (50 * 2) + (100 * 3) + (100 * 5) + ((a - 250) * 8);
+            }
+            totalBill += totalBill * 0.2;
+
+            document.write("Total Bill: " + totalBill);
+        } else {
+            alert("Invalid input");
         }
+        
     </script>
 </body>
 </html>
